@@ -1,13 +1,15 @@
 <?php
 	require_once 'includes/global.inc.php';
 
+	reqLoggedIn();
+
 	$status = "Welcome";
 
 	if(isset($_POST['submit-form'])) { 
 		
 		$status = "Successfully deleted all users";
 
-		$db->deleteAll('users');
+		$db->delete('users','true');
 	}
 
 ?>

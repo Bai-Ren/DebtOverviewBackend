@@ -1,6 +1,8 @@
 <?php
 	require_once 'includes/global.inc.php';
 
+	reqLoggedIn();
+
 	$status = "Welcome";
 
 ?>

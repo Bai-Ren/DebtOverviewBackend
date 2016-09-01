@@ -33,9 +33,9 @@ class DB {
 		return mysql_insert_id();
 	}
 
-	public function deleteAll ($table) {
+	public function delete ($table, $where) {
 
-		$sql = "DELETE FROM $table";
+		$sql = "DELETE FROM $table WHERE $where";
 		
 		mysql_query($sql);
 

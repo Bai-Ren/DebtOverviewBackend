@@ -1,6 +1,8 @@
 <?php
 	require_once 'includes/global.inc.php';
 
+	reqNotLoggedIn();
+
 	$username = "";
 	$password = "";
 	$password_confirm = "";
@@ -29,7 +31,7 @@
 
 		if ($success) {
 			$data['username'] = $username;
-			$data['password'] = md5($password);
+			$data['password'] = hasher($password);
 			$data['email'] = $email;
 
 			$message = "Successfully created new user!";

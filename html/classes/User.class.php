@@ -9,7 +9,7 @@ class User {
 	public $email;
 	public $joinDate;
 
-	function _construct ($data) {
+	function __construct ($data) {
 		$this->id = (isset($data['id'])) ? $data['id'] : "";
 		$this->username = (isset($data['username'])) ? $data['username'] : "";
 		$this->hashedPassword = (isset($data['password'])) ? $data['password'] : "";
@@ -36,7 +36,7 @@ class User {
 				"join_date" => "'".date("Y-m-d H:i:s",time())."'"				
 			);
 
-			$db->insert($data, 'users');
+			$this->id = $db->insert($data, 'users');
 		}
 	}
 
